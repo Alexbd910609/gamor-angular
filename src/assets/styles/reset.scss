@@ -6,9 +6,10 @@
   --fifth-color: rgba(105, 46, 188, 1);
   --body-color: rgba(249, 250, 252, 1);
   --container-color: rgba(240, 241, 243, 1);
-  --link-color: rgba(115, 116, 118, 1);
   --account-button-color: rgba(254, 254, 254, 1);
   --deg-color: rgba(249, 250, 252, .9);
+  --category-hover-color: rgba(237, 122, 55, .3);
+  --link-color: rgba(115, 116, 118, 1);
 
   --main-tipography: Inter, sans-serif;
   --secondary-tipography: Tw Cen MT, sans-serif;
@@ -24,6 +25,7 @@ body.dark-theme {
   --container-color: rgba(24, 31, 39, 1);
   --account-button-color: rgba(54, 59, 65, 1);
   --deg-color: rgba(31, 38, 46, .9);
+  --category-hover-color: rgba(126, 52, 237, .3);
 }
 
 * {

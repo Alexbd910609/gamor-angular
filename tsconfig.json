@@ -48,9 +48,9 @@
       //      "@guards/*": [
       //        "src/app/core/guards/*"
       //      ],
-      //      "@interfaces/*": [
-      //        "src/app/core/interfaces/*"
-      //      ],
+      "@interfaces/*": [
+        "src/app/core/interfaces/*"
+      ],
       //      "@pipes/*": [
       //        "src/app/core/pipes/*"
       //      ],
