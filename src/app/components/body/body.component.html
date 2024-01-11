@@ -1,0 +1,55 @@
+<section>
+  <section class="left">
+    <h1>start <span class="streaming">streaming</span> games differently</h1>
+    <div>
+      <h3>gamor now has <span class="stream-party">stream party</span> platform</h3>
+      <img
+        [ngSrc]="theme() === 'light' ? 'assets/images/light_twisted_line.png' : 'assets/images/dark_twisted_line.png'"
+        width="75" height="6" priority="true" alt="twisted_line"/>
+    </div>
+    <div class="buttons">
+      <button class="create-account">Create account</button>
+      <button class="sign-in">Sign in</button>
+    </div>
+  </section>
+
+  <section class="center">
+    <h2 class="title">Fortnite New Season</h2>
+    <h3 class="subtitle">Join Live Stream</h3>
+
+    <div class="button-group">
+      <img class="add-person" ngSrc="assets/images/person_add.png" width="36" height="36" priority="true" alt="add-person"/>
+      <h2 class="clock">{{ time() }}</h2>
+    </div>
+
+    <img [ngSrc]="theme() === 'light' ? 'assets/images/light_image.png' : 'assets/images/dark_image.png'"
+         fill="true" priority="true" alt="filter"/>
+  </section>
+
+  <section class="right">
+    <div class="options">
+      <h2>01. <span>Choose Platform</span></h2>
+
+      <div class="button-group" id="button-group">
+        <button class="selected" name="button-group" (click)="onSelected('party')" id="party">Party</button>
+        <button name="button-group" (click)="onSelected('match')" id="match">Matchs</button>
+        <button name="button-group" (click)="onSelected('streams')" id="streams">Streams</button>
+      </div>
+    </div>
+
+    <div class="options">
+      <h2>02. <span>Searching Game</span></h2>
+
+      <div class="search">
+        <div class="filter-input">
+          <input class="search-input" type="text" placeholder="Search Game">
+          <button>
+            <img [ngSrc]="theme() === 'light' ? 'assets/images/tune_black.png' : 'assets/images/tune_white.png'"
+                 width="36" height="36" priority="true" alt="filter"/>
+          </button>
+        </div>
+        <button class="search-button">Search Now</button>
+      </div>
+    </div>
+  </section>
+</section>

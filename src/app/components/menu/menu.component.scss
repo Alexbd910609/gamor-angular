@@ -1,0 +1,56 @@
+menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8vh;
+  background: none;
+
+  section {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+
+    .active {
+      color: var(--third-color);
+    }
+
+    button {
+      color: var(--link-color);
+      font-weight: 900;
+    }
+
+    .logo {
+      display: flex;
+
+      &-circle {
+        position: absolute;
+        background: linear-gradient(180deg, var(--deg-color) 10%, var(--deg-color) 90%);
+        padding: 1rem;
+        border-radius: 4rem;
+        font-size: 0;
+        z-index: 1;
+        margin: -0.2rem 0 0 -1.2rem;
+      }
+
+      &-text {
+        font-family: var(--secondary-tipography);
+        font-size: 2rem;
+        font-weight: 900;
+      }
+    }
+
+    .sign-in {
+      font-weight: 900;
+      color: var(--secondary-color)
+    }
+
+    .create-account {
+      border: solid 1px var(--link-color);
+      background: rgba(18, 21, 26, 1);
+      color: rgba(254, 254, 254, 1);
+      padding: 1rem 2rem;
+      border-radius: 3rem;
+    }
+  }
+}

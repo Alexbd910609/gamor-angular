@@ -1,0 +1,28 @@
+<menu>
+  <section>
+    <button routerLink="home" routerLinkActive="active">Home</button>
+    <button routerLink="streams" routerLinkActive="active">Streams</button>
+    <button routerLink="party" routerLinkActive="active">Party</button>
+    <button routerLink="premium" routerLinkActive="active">Premium</button>
+  </section>
+
+  <section>
+    <div class="logo">
+      <p class="logo-text">Gamor</p>
+      <span class="logo-circle">&nbsp;</span>
+    </div>
+  </section>
+
+  <section>
+    <button (click)="changeTheme()">
+      @if (theme() === 'light') {
+        <img ngSrc="assets/images/dark_mode.png" width="36" height="36" priority="true" alt="dark_mode">
+      } @else {
+        <img ngSrc="assets/images/light_mode.png" width="36" height="36" priority="true" alt="light_mode">
+      }
+    </button>
+
+    <button class="sign-in">Sign in</button>
+    <button class="create-account">Create account</button>
+  </section>
+</menu>

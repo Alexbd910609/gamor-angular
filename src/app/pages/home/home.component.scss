@@ -1,0 +1,10 @@
+section {
+  display: flex;
+  flex-direction: column;
+  height: 73vh;
+
+  app-body {
+    display: flex;
+    flex: 1;
+  }
+}
