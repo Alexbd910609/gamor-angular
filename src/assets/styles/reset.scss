@@ -10,6 +10,7 @@
   --deg-color: rgba(249, 250, 252, .9);
   --category-hover-color: rgba(237, 122, 55, .3);
   --link-color: rgba(115, 116, 118, 1);
+  --error-color: rgba(234, 67, 53, 1);
 
   --main-tipography: Inter, sans-serif;
   --secondary-tipography: Tw Cen MT, sans-serif;
@@ -58,8 +59,8 @@ button {
 }
 
 body {
-  //min-height: 100vh;
   font-size: 100%;
   font-family: var(--main-tipography);
   color: var(--secondary-color);
+  background: var(--container-color);
 }

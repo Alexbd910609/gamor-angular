@@ -2,13 +2,15 @@ import {Component, inject, OnInit, signal, WritableSignal} from '@angular/core';
 import {NgClass, NgOptimizedImage} from "@angular/common";
 import {ThemeService} from "@services/theme.service";
 import {ObservableDestroy} from "@classes/observable-destroy/observable-destroy";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-body',
   standalone: true,
   imports: [
     NgOptimizedImage,
-    NgClass
+    NgClass,
+    RouterLink
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.scss'
