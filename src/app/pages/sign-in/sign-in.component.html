@@ -8,7 +8,7 @@
       @if (form.controls['email'].touched && form.controls['email'].getError('required')) {
         <span class="error">E-mail is required</span>
       }
-      @if (form.controls['email'].touched && form.controls['email'].dirty && (form.controls['email']?.hasError('email') || form.controls['email']?.hasError('pattern'))) {
+      @if (form.controls['email'].touched && form.controls['email'].dirty && (form.controls['email'].hasError('email') || form.controls['email'].hasError('pattern'))) {
         <span class="error">Enter a valid e-mail</span>
       }
     </div>
