@@ -7,4 +7,8 @@ section {
     display: flex;
     flex: 1;
   }
+
+  @media(width < 1440px) {
+    gap: 7rem;
+  }
 }

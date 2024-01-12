@@ -40,6 +40,13 @@ menu {
       }
     }
 
+    img {
+      @media(width < 1440px) {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
     .sign-in {
       font-weight: 900;
       color: var(--secondary-color)
@@ -51,6 +58,14 @@ menu {
       color: rgba(254, 254, 254, 1);
       padding: 1rem 2rem;
       border-radius: 3rem;
+
+      @media(width < 1440px) {
+        padding: 0.7rem 1rem;
+      }
+    }
+
+    @media(width < 1440px) {
+      gap: 2rem;
     }
   }
 }

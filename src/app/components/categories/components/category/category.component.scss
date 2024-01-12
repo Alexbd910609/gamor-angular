@@ -4,7 +4,7 @@ section {
   padding: 2rem 0 0 2rem;
   position: relative;
   z-index: 1;
-  width: 18vw;
+  width: 18.5vw;
   border-radius: 1rem;
   background: var(--body-color);
   cursor: pointer;
@@ -46,5 +46,9 @@ section {
 
   &:hover {
     background: var(--category-hover-color);
+  }
+
+  @media(width < 1440px) {
+    width: 17.5vw;
   }
 }

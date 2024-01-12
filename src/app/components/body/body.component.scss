@@ -4,16 +4,16 @@ section {
   display: flex;
 
   .left, .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-inline: 2%;
     width: 33%;
     background: var(--body-color);
   }
 
   .left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     gap: 4rem;
-    padding-inline: 2%;
     border-top-left-radius: 1.5rem;
     border-bottom-left-radius: 1.5rem;
 
@@ -25,6 +25,11 @@ section {
 
       .streaming {
         color: var(--fourth-color);
+      }
+
+      @media(width < 1440px) {
+        font-size: 3rem;
+        line-height: 3.5rem;
       }
     }
 
@@ -51,12 +56,25 @@ section {
         border-radius: 3rem;
         background: var(--account-button-color);
         box-shadow: 10px 7px 5px var(--container-color);
+
+        @media(width < 1440px) {
+          padding: 0.7rem 1rem;
+          font-weight: 500;
+        }
+      }
+
+      @media(width < 1440px) {
+        gap: 2rem;
       }
 
       .sign-in {
         font-weight: 900;
         color: var(--link-color);
       }
+    }
+
+    @media(width < 1440px) {
+      gap: 3rem;
     }
   }
 
@@ -72,11 +90,20 @@ section {
       z-index: 1;
       padding-top: 3rem;
       color: rgba(255, 255, 255, 1);
+
+      @media(width < 1440px) {
+        padding-top: 2rem;
+        font-size: 1.3rem;
+      }
     }
 
     .subtitle {
       z-index: 1;
       color: var(--fifth-color);
+
+      @media(width < 1440px) {
+        font-size: 1rem;
+      }
     }
 
     .button-group {
@@ -91,6 +118,14 @@ section {
         backdrop-filter: blur(3rem);
         padding: 1rem;
         border-radius: 4rem;
+
+        @media(width < 1440px) {
+          margin-left: -2rem;
+          margin-top: -1rem;
+          width: 24px;
+          height: 24px;
+          padding: 0.7rem;
+        }
       }
 
       .clock {
@@ -98,6 +133,11 @@ section {
         background: rgba(255, 255, 255, 1);
         color: var(--third-color);
         border-radius: 4rem;
+
+        @media(width < 1440px) {
+          padding: 0.7rem 1rem;
+          font-size: 1.3rem;
+        }
       }
     }
 
@@ -108,12 +148,8 @@ section {
   }
 
   .right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 3rem;
-    padding-inline: 2%;
     border-top-right-radius: 1.5rem;
     border-bottom-right-radius: 1.5rem;
 
@@ -130,6 +166,10 @@ section {
           color: var(--secondary-color);
           font-size: 70%;
         }
+
+        @media(width < 1440px) {
+          font-size: 1.2rem;
+        }
       }
 
       .button-group {
@@ -145,6 +185,11 @@ section {
           padding: 1rem 2rem;
           border-radius: 3rem;
           background: transparent;
+
+          @media(width < 1440px) {
+            padding: 0.7rem 1rem;
+            font-weight: 500;
+          }
         }
 
         button.selected {
@@ -173,6 +218,11 @@ section {
           .search-input {
             width: 80%;
             font-weight: 900;
+
+            @media(width < 1440px) {
+              width: 60%;
+              font-weight: 500;
+            }
           }
 
           img {
@@ -182,7 +232,6 @@ section {
         }
 
         &-button {
-          border-top: solid 5px var(--body-color);
           margin-block: 1rem;
           width: 90%;
           font-weight: 900;
@@ -190,6 +239,10 @@ section {
           padding-block: 1.5rem;
           color: var(--main-color);
           background: var(--secondary-color);
+
+          @media(width < 1440px) {
+            padding-block: 1rem;
+          }
         }
       }
     }
