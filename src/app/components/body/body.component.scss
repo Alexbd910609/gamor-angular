@@ -43,7 +43,13 @@ section {
     }
 
     img {
-      padding-left: 32%;
+      padding-left: 28%;
+      width: 22%;
+      height: 6px;
+
+      @media(width < 1440px) {
+        padding-left: 26%;
+      }
     }
 
     .buttons {

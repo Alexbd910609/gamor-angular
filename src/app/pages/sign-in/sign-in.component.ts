@@ -19,6 +19,11 @@ export class SignInComponent {
   });
 
   public signIn(): void {
-    console.log(this.form.value);
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      this.form.markAsDirty();
+    } else {
+      console.log(this.form.value);
+    }
   }
 }
