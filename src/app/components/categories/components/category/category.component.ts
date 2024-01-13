@@ -2,7 +2,7 @@ import {Component, inject, OnInit, signal, WritableSignal} from '@angular/core';
 import {Category} from "@interfaces/category.interface";
 import {NgOptimizedImage} from "@angular/common";
 import {ObservableDestroy} from "@classes/observable-destroy/observable-destroy";
-import {ThemeService} from "@services/theme.service";
+import {ThemeService} from "@services/theme/theme.service";
 
 @Component({
   selector: 'app-category',

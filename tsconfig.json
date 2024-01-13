@@ -45,21 +45,12 @@
       "@constants/*": [
         "src/app/core/constants/*"
       ],
-      //      "@guards/*": [
-      //        "src/app/core/guards/*"
-      //      ],
       "@interfaces/*": [
         "src/app/core/interfaces/*"
       ],
-      //      "@pipes/*": [
-      //        "src/app/core/pipes/*"
-      //      ],
       "@services/*": [
         "src/app/core/services/*"
       ],
-      //      "@validators/*": [
-      //        "src/app/core/validators/*"
-      //      ],
       "@pages/*": [
         "src/app/pages/*"
       ],

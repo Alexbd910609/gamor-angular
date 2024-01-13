@@ -2,7 +2,7 @@ import {Component, inject, OnInit, signal, WritableSignal} from '@angular/core';
 import {themeKey} from "@constants/storage-keys";
 import {NgOptimizedImage} from "@angular/common";
 import {RouterLink, RouterLinkActive} from "@angular/router";
-import {ThemeService} from "@services/theme.service";
+import {ThemeService} from "@services/theme/theme.service";
 
 @Component({
   selector: 'app-menu',

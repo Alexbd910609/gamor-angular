@@ -25,6 +25,12 @@
       <h2 class="clock">{{ time() }}</h2>
     </div>
 
+    <div class="party">
+      @for (onParty of onParty(); track onParty.id) {
+        <div [class]="$index % 2 === 0 ? 'party-left-logo' : 'party-right-logo'" [ngStyle]="{'background': onParty.logo.color}">{{onParty.logo.char}}</div>
+      }
+    </div>
+
     <img [ngSrc]="theme() === 'light' ? 'assets/images/light_image.png' : 'assets/images/dark_image.png'"
          class="bg-image" fill="true" priority="true" alt="filter"/>
   </section>
@@ -43,18 +49,33 @@
     <div class="options">
       <h2>02. <span>Searching Game</span></h2>
 
-      <div class="search">
+      <form [formGroup]="searchForm" class="search">
         <div class="filter-input">
-          <input class="search-input" type="text" placeholder="Search Game">
-
-          <button>
-            <img [ngSrc]="theme() === 'light' ? 'assets/images/tune_black.png' : 'assets/images/tune_white.png'"
-                 width="36" height="36" priority="true" alt="filter"/>
-          </button>
+          <select id="select" class="select-game" formControlName="search">
+            <option value="">Select a game</option>
+            @for (game of games(); track game.id) {
+              <option [value]="game.name">{{ game.name }}</option>
+            }
+          </select>
         </div>
 
-        <button class="search-button">Search Now</button>
-      </div>
+        <div class="list">
+          @for (player of players(); track player.id) {
+            @if (!player.joined) {
+              <div class="list-item">
+                <span class="order">{{ $index + 1 }}</span>
+                <span class="name">{{ player.name }}</span>
+                <span [ngStyle]="{'background': player.logo.color}" class="logo">{{ player.logo.char }}</span>
+                <button class="add" (click)="addToParty(player)">+</button>
+              </div>
+            }
+          }
+        </div>
+
+        <button [disabled]="!searchForm.controls['search'].value" class="search-button" (click)="getPlayersByParams()">
+          Search Now
+        </button>
+      </form>
     </div>
   </section>
 </section>

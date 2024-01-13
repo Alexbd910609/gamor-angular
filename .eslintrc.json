@@ -29,7 +29,6 @@
       "error",
       "property"
     ],
-    "dot-notation": "error",
     "eqeqeq": [
       "error",
       "always"
