@@ -2,12 +2,13 @@ import {Component, inject, OnInit, signal, WritableSignal} from '@angular/core';
 import {NgClass, NgOptimizedImage, NgStyle} from "@angular/common";
 import {ThemeService} from "@services/theme/theme.service";
 import {ObservableDestroy} from "@classes/observable-destroy/observable-destroy";
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {Game} from "@interfaces/game.interface";
 import {GamesService} from "@services/games/games.service";
 import {PlayersService} from "@services/players/players.service";
 import {Player, PlayerPlatform} from "@interfaces/player.interface";
 import {ReactiveFormsModule, UntypedFormControl, UntypedFormGroup} from "@angular/forms";
+import Cookies from "js-cookie";
 
 @Component({
   selector: 'app-body',
@@ -27,6 +28,7 @@ export class BodyComponent implements OnInit {
   private _gamesService: GamesService = inject(GamesService);
   private _playersService: PlayersService = inject(PlayersService);
   private _themeService: ThemeService = inject(ThemeService);
+  private _router: Router = inject(Router);
 
   protected blackButtonStyle: string = 'background: url(assets/images/tune_black.png) no-repeat; background-size: 24px; background-position: right 2rem center;';
   protected whiteButtonStyle: string = 'background: url(assets/images/tune_white.png) no-repeat; background-size: 24px; background-position: right 2rem center;';
@@ -36,6 +38,7 @@ export class BodyComponent implements OnInit {
   public games: WritableSignal<Game[]> = signal([]);
   public players: WritableSignal<Player[]> = signal([]);
   public onParty: WritableSignal<Player[]> = signal([]);
+  public user: string | undefined = Cookies.get('auth');
 
   public searchForm: UntypedFormGroup = new UntypedFormGroup({
     search: new UntypedFormControl({value: '', disabled: false})
@@ -95,17 +98,21 @@ export class BodyComponent implements OnInit {
   }
 
   public addToParty(player: Player): void {
-    this.players.update((players: Player[]): Player[] => {
-      players.forEach((p: Player): void => {
-        if (p.id === player.id) {
-          p.joined = true;
-        }
+    if (Cookies.get('auth')) {
+      this.players.update((players: Player[]): Player[] => {
+        players.forEach((p: Player): void => {
+          if (p.id === player.id) {
+            p.joined = true;
+          }
+        });
+
+        return players;
       });
 
-      return players;
-    });
-
-    this.onParty().push(player);
+      this.onParty().push(player);
+    } else {
+      this._router.navigate(['sign-in']).then();
+    }
   }
 
   ngOnInit(): void {

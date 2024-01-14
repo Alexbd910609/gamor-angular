@@ -22,7 +22,14 @@
       }
     </button>
 
-    <button class="sign-in" routerLink="sign-in">Sign in</button>
-    <button class="create-account">Create account</button>
+    @if (!user().email || !user().nick) {
+      <button class="sign-in" routerLink="sign-in">Sign in</button>
+      <button class="create-account">Create account</button>
+    } @else if (user()) {
+      <div class="login-menu">
+        <span [ngStyle]="{'background': user()?.logo?.color}" class="logo">{{ user()?.logo?.char }}</span>
+        <button class="log-out" (click)="logOut()">Log out</button>
+      </div>
+    }
   </section>
 </menu>

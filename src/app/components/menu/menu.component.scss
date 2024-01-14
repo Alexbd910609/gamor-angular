@@ -64,6 +64,31 @@ menu {
       }
     }
 
+    .login-menu {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: center;
+      width: 10vw;
+
+      .log-out {
+        font-weight: 900;
+        color: var(--secondary-color)
+      }
+
+      .logo {
+        color: rgba(255, 255, 255, 1);
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 3%
+      }
+    }
+
     @media(width < 1440px) {
       gap: 2rem;
     }

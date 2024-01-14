@@ -9,10 +9,12 @@
            [ngSrc]="theme() === 'light' ? 'assets/images/light_twisted_line.png' : 'assets/images/dark_twisted_line.png'"/>
     </div>
 
-    <div class="buttons">
-      <button class="create-account">Create account</button>
-      <button class="sign-in" routerLink="/sign-in">Sign in</button>
-    </div>
+    @if (!user) {
+      <div class="buttons">
+        <button class="create-account">Create account</button>
+        <button class="sign-in" routerLink="/sign-in">Sign in</button>
+      </div>
+    }
   </section>
 
   <section class="center">
@@ -27,7 +29,9 @@
 
     <div class="party">
       @for (onParty of onParty(); track onParty.id) {
-        <div [class]="$index % 2 === 0 ? 'party-left-logo' : 'party-right-logo'" [ngStyle]="{'background': onParty.logo.color}">{{onParty.logo.char}}</div>
+        <div [class]="$index % 2 === 0 ? 'party-left-logo' : 'party-right-logo'"
+             [ngStyle]="{'background': onParty.logo.color}">{{ onParty.logo.char }}
+        </div>
       }
     </div>
 
